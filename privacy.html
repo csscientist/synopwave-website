@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Trust Privacy Policy | SynopWave Innovations</title>
-    <meta name="description" content="Learn how the Food Trust mobile app uses, sends, and stores information.">
+    <meta name="description" content="How Food Trust handles shopper information and Google data in its private email review workflow.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#10221d">
     <meta property="og:title" content="Food Trust Privacy Policy | SynopWave Innovations">
-    <meta property="og:description" content="Learn how the Food Trust mobile app uses, sends, and stores information.">
+    <meta property="og:description" content="How Food Trust handles shopper information and Google data in its private email review workflow.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://synopwaveinnovations.com/privacy.html">
     <meta property="og:site_name" content="SynopWave Innovations">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Food Trust Privacy Policy | SynopWave Innovations">
-    <meta name="twitter:description" content="Learn how the Food Trust mobile app uses, sends, and stores information.">
+    <meta name="twitter:description" content="How Food Trust handles shopper information and Google data in its private email review workflow.">
     <link rel="canonical" href="https://synopwaveinnovations.com/privacy.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
@@ -37,16 +37,16 @@
     <main id="main-content">
       <header class="page-hero">
         <div class="container">
-          <p class="eyebrow">Effective July 31, 2026</p>
+          <p class="eyebrow">Updated September 23, 2026</p>
           <h1>Food Trust Privacy Policy</h1>
-          <p>This policy explains how the Food Trust mobile app uses, sends, and stores information.</p>
+          <p>This policy explains how Food Trust handles information in its shopper app and separate, private email review workflow.</p>
         </div>
       </header>
       <div class="prose container">
-        <p class="notice"><strong>In brief:</strong> Food Trust has no user accounts, advertising, analytics, cloud synchronization, or location tracking. App data is primarily stored on your device.</p>
+        <p class="notice"><strong>In brief:</strong> The current local shopper experience stores app history on your device. The separate review pilot stores submitted reports and email replies on our backend. Only the Food Trust operator connects a Gmail mailbox; shoppers are not asked to provide access to their email.</p>
 
         <h2>Who operates Food Trust</h2>
-        <p>Food Trust is operated by SynopWave Innovations LLC. This policy applies to the Food Trust mobile app.</p>
+        <p>Food Trust is operated by SynopWave Innovations LLC. This policy covers its shopper app and private product-information review pilot. The review pilot is not yet a generally available shopper service.</p>
 
         <h2>Camera access</h2>
         <p>Food Trust uses your device's camera only to scan product barcodes. Camera access is not used for advertising, analytics, or location tracking.</p>
@@ -64,10 +64,29 @@
           <li>Shopping sessions</li>
           <li>Product information you submit locally in the app</li>
         </ul>
-        <p>This information is not synchronized to a SynopWave account or cloud service. You can remove locally stored information through available controls in the app or by uninstalling Food Trust.</p>
+        <p>In the local shopper experience, this information is not automatically synchronized to our review backend. You can remove locally stored information through available controls in the app or by uninstalling Food Trust. Uninstalling does not delete reports or correspondence already stored separately on our servers.</p>
+
+        <h2>Reports in the private review pilot</h2>
+        <p>The separate, authenticated review workflow stores a submitting user's identifier, product name, barcode, question category, notes, reference number, timestamps and delivery status in Supabase. When sending is enabled, product details, the question, notes and reference are emailed to the configured reviewer through the Food Trust mailbox. Do not put sensitive personal information into product notes.</p>
+        <p>This pilot currently uses one configured review recipient. It is not an automatic service for contacting every manufacturer. Ordinary authenticated users can access their own report details; raw email reply records are restricted to backend administrative access.</p>
+
+        <h2>Google mailbox access and purpose</h2>
+        <p>The operator authorizes the dedicated Food Trust mailbox using Google OAuth. The integration requests Gmail read access (gmail.readonly) and permission to send email (gmail.send). Read permission can technically access the mailbox's messages, not just a particular label or folder. The implemented worker checks the mailbox identity and retrieves the specific conversation threads associated with recorded review requests; it does not search shoppers' inboxes.</p>
+        <p>The worker sends product questions when enabled and reads replies to match them to the original request. It records acknowledgments, candidate responses and unmatched messages for review. Receiving a message does not automatically make its contents approved evidence or produce a halal decision. Sending and reply checks are currently operator-run, not a continuously running service.</p>
+
+        <h2>Google data stored and shared</h2>
+        <p>Google processes outgoing questions and incoming replies in Gmail. Supabase hosts the review backend and stores message and thread identifiers, reply classifications and the message objects returned by Gmail, including headers, sender and recipient information, timestamps, message text and any content included in those objects. The worker does not separately download attachment files. Messages that fail matching checks can also be stored privately as unmatched records.</p>
+        <p>The Google authorization credentials used by the backend are stored as server-side secrets, not in the shopper app. Review data is used to operate and troubleshoot the product-information review workflow. Raw correspondence is not automatically published to shoppers. Any proposed use of correspondence as product evidence requires a separate review of relevance, scope and permission to disclose it.</p>
+        <p>Human access to Google message content is limited to the mailbox owner's specifically authorized review, or exceptions permitted by Google's policy such as security investigations or legal requirements. Google data is not sold, used for advertising, used to determine creditworthiness, or used to train general-purpose AI models.</p>
+        <p>Food Trust's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+
+        <h2>Retention, deletion and disconnecting Google</h2>
+        <p>The pilot currently retains server-side review reports and stored replies until they are manually deleted. There is no automatic deletion schedule yet. The worker's 30-day reply-check window is not a deletion period. Gmail correspondence remains in the mailbox under the mailbox owner's control.</p>
+        <p>To request access, correction or deletion of a report or stored correspondence, contact <a href="mailto:admin@synopwaveinnovations.com">admin@synopwaveinnovations.com</a>, preferably with its reference number. We may need to verify that you are entitled to request the change. Deletion is handled manually; removing a backend record does not recall messages delivered to recipients or automatically remove copies from Gmail or provider backups.</p>
+        <p>The mailbox owner can revoke Food Trust's authorization in <a href="https://myaccount.google.com/connections">Google Account connections</a> to stop future authorized mailbox access. Revoking access does not itself delete previously stored records. Contact us to request their removal as well.</p>
 
         <h2>Services Food Trust does not use</h2>
-        <p>Food Trust currently has no user accounts, cloud synchronization, advertising SDKs, analytics SDKs, or location tracking.</p>
+        <p>The shopper app does not use advertising SDKs, analytics SDKs or location tracking. Its local history is not automatically cloud-synchronized. The authenticated review pilot and its server storage are separate, as described above.</p>
 
         <h2>Sale of personal information</h2>
         <p>SynopWave Innovations LLC does not sell personal information.</p>

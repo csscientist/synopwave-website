@@ -237,6 +237,14 @@ h1 {
   font-size: 1.1rem;
 }
 
+.product-card p + p {
+  margin-top: 1rem;
+}
+
+.product-card a {
+  color: #effaf5;
+}
+
 .status {
   display: inline-flex;
   padding: 0.5rem 0.85rem;
